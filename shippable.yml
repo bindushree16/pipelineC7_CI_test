@@ -1,0 +1,66 @@
+jobs:
+ - name: c7_base-test
+   type: runSh
+   steps:
+     - TASK:
+         runtime:
+            options:
+             imageName: "drydock/c7"
+             imageTag: master
+         script:
+           - gcloud version
+           - terraform --version
+           - packer.io --version
+           - git --version
+           - kubectl version --client
+           - kops version
+           - helm version --client
+           - doctl version
+           - ansible --version
+           - zip -v
+           - python --version
+           - node --version
+           - git lfs version
+           - source /usr/local/rvm/scripts/rvm
+           - ruby -v
+           - jq --version
+           - aws --version
+           - az --version
+           - jfrog --version
+           - java -version
+           - node -v
+           - rvm list
+           - python -V
+           - pip show boto
+           - pip show boto3
+           - pip show apache-libcloud
+           - pip show azure
+           - pip show dopy
+           - sudo --version
+           - gcc --version
+           - unzip -v
+           - make --version
+           - curl --version
+           - wget --version
+           - nano --version
+           - gettext --version
+           - rpm -qa | grep epel-release
+           - yumdb info kernel-devel
+           - rpm -qi openssl
+           - rpm -qi openssh-clients
+           - rpm -qi gettext
+           - rpm -qi psmisc
+           - rpm -qi glibc.i686
+           - yum provides \*/libgcc_s.so.1 | grep libgcc
+           - rpm -qa | grep htop           
+           - rpm -qi rsync
+           - vim --version  
+           - rpm -qi python36u-devel
+           - rpm -qi python36u-libs
+           - pip --version
+           - pip show virtualenv
+           - python3.6 --version
+           - openstack --version
+           - pip3.6 --version
+           - rpm -qi python-devel 
+           - pip show pyopenssl          
