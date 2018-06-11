@@ -1,15 +1,18 @@
-language: c
+language: python
 
-compiler:
-  - gcc #8.0.1
-  - clang #6.0.0
+python:
+  - 2.7 #.5 
+  - 3.4 #.8 
+  - 3.5 #.5 
+  - 3.6 #.5
   
-build: 
+build:
   pre_ci_boot:
-    image_name: drydock/c7cppall
+    image_name: drydock/c7pytall
     image_tag: master
     pull: true
     
   ci:
-    - ls
-    - pwd
+    - python --version 
+    - pip --version #8.1.2
+    - virtualenv --version #15.1.0
